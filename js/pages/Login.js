@@ -70,14 +70,15 @@ Login = {
 
                 switch (parseInt(data.data.role)) {
                     case 1:
-                        
+                                                document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
                         break;
                     case 2:
                         //individual service provider
-                        // document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
+                                    Cedezone.storeName(data.data.name);
                         Login.providerStatus(data.data);
                         break;
                     case 3:
+                                Cedezone.storeName(data.data.name);
                         Login.providerStatus(data.data);
                         break;
                     case 4:
@@ -131,8 +132,6 @@ Login = {
 
       providerStatus: function (response) {
         if(response.provider.enable==0){
-
-            Cedezone.storeName(data.data.name);
                         showDialog({
                     title: 'Success',
                     text: 'Login you in.....',
@@ -140,14 +139,12 @@ Login = {
                         window.location = 'pending.html';
             // window.location = App.url + 'pending.html';
         }else if(response.provider.enable==1){
-           Cedezone.storeName(data.data.name);
                         showDialog({
                     title: 'Success',
                     text: 'Login you in.....',
                 })
                         window.location = 'home.html';
         }else{
-            Cedezone.storeName(data.data.name);
                         showDialog({
                     title: 'Success',
                     text: 'Login you in.....',

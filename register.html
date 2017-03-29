@@ -20,9 +20,9 @@
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/mprogress.min.css">
-	 <link rel="stylesheet" href="css/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="css/icon.css">
-    <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
+	<link rel="stylesheet" href="css/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="css/icon.css">
+	<link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 </head>
 
 <body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
@@ -44,78 +44,93 @@
 			<div class="pages-title">
 				<h3 style="color: white">Register</h3>
 			</div>
-			<form id="register" data-parsley-validate role="form" method="POST" action="#">
-				<div class="input-field">
-					<input id="full_name" type="text" class="validate" required name="name" placeholder="Full Name">
-					<!--<label for="full_name">Full Name</label>-->
-					<span class="help-block">
-                                        <strong>
-                                        </strong>
-            </span>
-				</div>
-				<div class="input-field">
-					<input id="phone" type="number" class="validate" name="phone" placeholder="Phone Number" required onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-					<!--<label for="last-name">Phone</label>-->
-					<span class="help-block">
-                                        <strong>
-                                        </strong>
-            </span>
-				</div>
+							<div class="row">
 
-				<div class="input-field">
-					<input id="email" type="email" class="validate" name="email" required placeholder="Email">
-					<!--<label for="email">Email</label>-->
-					<span class="help-block">
+			<form id="provider_register" data-parsley-validate role="form" method="POST" action="#">
+					<div class="input-field col s12">
+						<input id="full_name" type="text" class="validate" required name="name" placeholder="Full Name">
+						<!--<label for="full_name">Full Name</label>-->
+						<span class="help-block">
                                         <strong>
                                         </strong>
             </span>
-				</div>
-				<div class="input-field">
-					<input id="address" type="text" class="validate" name="address" required placeholder="Address">
-					<!--<label for="address">Address</label>-->
-					<span class="help-block">
+					</div>
+					<div class="input- col s12">
+						<input id="phone" type="number" class="validate" name="phone" placeholder="Phone Number" required onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+						<!--<label for="last-name">Phone</label>-->
+						<span class="help-block">
                                         <strong>
                                         </strong>
             </span>
-				</div>
-<div class="input-field">
-					<select class="browser-default country_id" id="country_id" name="country_id" required>
+					</div>
+
+					<div class="input-field col s12">
+						<input id="email" type="email" class="validate" name="email" required placeholder="Email">
+						<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
+					</div>
+					<div class="input-field col s12">
+						<input id="address" type="text" class="validate" name="address" required placeholder="Address">
+						<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
+					</div>
+					<div class="input-field col s12">
+						<select class="browser-default country_id" id="country_id" name="country_id" required>
           			<option value="">Country</option>
+					  <span class="help-block">
+                                        <strong>
+                                        </strong>
+            						</span>
         		</select>
-
-<div class="input-field">
-					<select class="browser-default state_id" id="state_id" name="state_id" required>
+					</div>
+						<div class="input-field col s12">
+							<select class="browser-default state_id" id="state_id" name="state_id" required>
           			<option value="" >State</option>  
+					  <span class="help-block">
+                                        <strong>
+                                        </strong>
+            						</span>
         		</select>
+						</div>
+							<div class="input-field col s12">
+								<input id="intended_service" type="text" class="validate" required name="intended_service" value="Cleaning" hidden>
+								<span class="help-block">
+                                        <strong>
+                                        </strong>
+            						</span>
+							</div>
 
-<div class="input-field">
-					<input id="intended_service" type="text" class="validate" required name="intended_service" placeholder="Intended Service">
-</div>
-
-<div class="input-field">
-					<select class="browser-default" id="providertype_id" name="providertype_id" required>
+							<div class="input-field col s12">
+								<select class="browser-default" id="providertype_id" name="providertype_id" required>
           			<option value="" >Provider Type</option>  
+					  <span class="help-block">
+                                        <strong>
+                                        </strong>
+            						</span>
         		</select>
+							</div>
 
-				<div class="input-field">
-					<input id="password" type="password" class="validate" name="password" required placeholder="Password">
-					<!--<label for="password">Password</label>-->
-					<span class="help-block">
+								<div class="input-field col s12">
+									<input id="password" type="password" class="validate" name="password" required placeholder="Password">
+									<span class="help-block">
                                         <strong>
                                         </strong>
-            </span>
-				</div>
-				<div class="input-field">
-					<input id="confirm_password" type="password" class="validate" required name="password_confirmation" placeholder="Confirm Password">
-					<!--<label for="confirm_password">Confirm Password</label>-->
-					<span class="help-block">
+            						</span>
+								</div>
+								<div class="input-field col s12">
+									<input id="confirm_password" type="password" class="validate" required name="password_confirmation" placeholder="Confirm Password">
+									<span class="help-block">
                                         <strong>
                                         </strong>
-            </span>
-				</div>
-				<button class="button" type="submit">Register</button>
-				<!--<strong class="login-now">Your already registered? <a href="#">Login now</a></strong>-->
+           							 </span>
+								</div>
+								<button class="button" type="submit">Register</button>
 			</form>
+			</div>
 			<footer2>
 				<div class="container">
 
@@ -127,47 +142,47 @@
 				</div>
 			</footer2>
 			<br>
-			
-		</div>
-	</div>
-	<img src="img/loading.gif" class="hidden" id="loading-gif" />
-	<!-- end register -->
-	
-	<!-- footer -->
-	<!--<footer>
+
+			</div>
+			</div>
+			<img src="img/loading.gif" class="hidden" id="loading-gif" />
+			<!-- end register -->
+
+			<!-- footer -->
+			<!--<footer>
 		<div class="ft-bottom">
 			<span>Copyright © 2017 All Rights Reserved </span>
 		</div>
 	</footer>-->
-	<!-- end footer -->
+			<!-- end footer -->
 
-	<!-- script -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.form.js"></script>
-	<script src="js/jquery.blockUI.js"></script>
-	<script src="js/materialize.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/custom.js"></script>
+			<!-- script -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.form.js"></script>
+			<script src="js/jquery.blockUI.js"></script>
+			<script src="js/materialize.min.js"></script>
+			<script src="js/slick.min.js"></script>
+			<script src="js/owl.carousel.min.js"></script>
+			<script src="js/custom.js"></script>
 
-	<script src="js/parsely.min.js"></script>
-	<script src="js/pnotify.min.js"></script>
-	<script src="js/mprogress.min.js"></script>
-	    <script src="js/material.min.js"></script>
-	<script src="js/mdl-jquery-modal-dialog.js"></script>
+			<script src="js/parsely.min.js"></script>
+			<script src="js/pnotify.min.js"></script>
+			<script src="js/mprogress.min.js"></script>
+			<script src="js/material.min.js"></script>
+			<script src="js/mdl-jquery-modal-dialog.js"></script>
 
-	<script src="js/pages/Main.js"></script>
-	<script src="js/pages/register.js"></script>
+			<script src="js/pages/Main.js"></script>
+			<script src="js/pages/register.js"></script>
 
-	<script>
-	</script>
-	<script type="application/javascript">
-		$(document).ready(function () {
-			// Form.init('login');
-			Register_Provider.init();
-			Cedezone.init();
-		})
-	</script>
+			<script>
+			</script>
+			<script type="application/javascript">
+				$(document).ready(function () {
+					// Form.init('login');
+					Register_Provider.init();
+					Cedezone.init();
+				})
+			</script>
 
 </body>
 
