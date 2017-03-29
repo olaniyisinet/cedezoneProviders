@@ -78,6 +78,25 @@
                                         </strong>
             </span>
 				</div>
+<div class="input-field">
+					<select class="browser-default country_id" id="country_id" name="country_id" required>
+          			<option value="">Country</option>
+        		</select>
+
+<div class="input-field">
+					<select class="browser-default state_id" id="state_id" name="state_id" required>
+          			<option value="" >State</option>  
+        		</select>
+
+<div class="input-field">
+					<input id="intended_service" type="text" class="validate" required name="intended_service" placeholder="Intended Service">
+</div>
+
+<div class="input-field">
+					<select class="browser-default" id="providertype_id" name="providertype_id" required>
+          			<option value="" >Provider Type</option>  
+        		</select>
+
 				<div class="input-field">
 					<input id="password" type="password" class="validate" name="password" required placeholder="Password">
 					<!--<label for="password">Password</label>-->
@@ -145,7 +164,7 @@
 	<script type="application/javascript">
 		$(document).ready(function () {
 			// Form.init('login');
-			Register.init();
+			Register_Provider.init();
 			Cedezone.init();
 		})
 	</script>
