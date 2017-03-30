@@ -82,20 +82,49 @@
 	</div>
 	<!-- end panel control -->
 
-	<!-- pricing -->
-	<div class="pricing-app app-pages app-section">
+	<div class="features-app app-pages app-section">
 		<div class="container">
 			<div class="pages-title">
-				<h5>Statistics</h5>
+				<h3>Statistics</h3>
 			</div>
-			<div class="col s12" id="history-content">
-
-            </div>
-			
+			<br>
+			<br>
+			<div class="row center">
+				<div class="col s6">
+					<div class="entry">
+						<i class="fa fa-thumbs-o-up" style="color: green"></i>
+						<h6>Total Fulfilled</h6>
+						<h5 id="counter1">0</h5>
+					</div>
+				</div>
+				<div class="col s6">
+					<div class="entry">
+						<i class="fa fa-hand-paper-o" style="color: yellow"></i>
+						<h6>Total Pending</h6>
+						<h5 id="counter2">0</h5>
+					</div>
+				</div>
+			</div>
+			<br>
+			<br>
+			<div class="row center">
+				<div class="col s6">
+					<div class="entry">
+						<i class="fa fa-thumbs-o-down" style="color: red"></i>
+						<h6>Total Rejected</h6>
+						<h5 id="counter3">0</h5>
+					</div>
+				</div>
+				<div class="col s6">
+					<div class="entry">
+						<i class="fa fa-money" style="color: blue"></i>
+						<h6>Total Settlement</h6>
+						<h5 id="counter4">0</h5>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- end pricing -->
-
 	<!-- script -->
 	<script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
@@ -108,14 +137,12 @@
 	<script src="js/responsive_table.js"></script>
 
 	 <script src="js/pages/Main.js"></script>
-     <script src="js/pages/sideprofile.js"></script>
      <script src="js/pages/home.js"></script>
+	 <script src="js/pages/sideprofile.js"></script>
 	
     <script type="application/javascript">
         $(document).ready(function() {
-            // Form.init('login');
-			Cedezone.init();
-			Home.init();
+			Dashboard.init();
             sideProfile.init();
 });
 	function imgError(image) {
