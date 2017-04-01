@@ -141,14 +141,42 @@
 	<script src="js/responsive_table.js"></script>
 
 	<script src="js/pages/Main.js"></script>
-	<!--<script src="js/pages/home.js"></script>-->
+	<script src="js/pages/home.js"></script>
 	<script src="js/pages/sideprofile.js"></script>
 
 	<script type="application/javascript">
 		$(document).ready(function () {
-			Home.init();
+			Cedezone.init();
 			sideProfile.init();
+
+			function getStatus() {
+				$.ajax({
+					url: Cedezone.CONSTANTS.BASE_URL + '/provider/statistics',
+					data: {
+						token: Cedezone.getToken()
+					},
+					error: function () {
+						Cedezone.hideLoadingGif();
+					},
+					dataType: 'json',
+					success: function (data) {
+						Cedezone.hideLoadingGif();
+						setDashboardData(data);
+					},
+					type: 'GET',
+					beforeSend: function () {
+						Cedezone.showLoadingGif();
+					},
+				});
+			}
 		});
+
+			function setDashboardData(data) {
+				$('.row').find('#counter1').text(data.data.total_users);
+				$('.row').find('#counter2').text(data.data.total_providers);
+				$('.row').find('#counter3').text(data.data.pending_orders);
+				$('.row').find('#counter4').text(data.data.confirmed_orders);
+			}
 
 		function imgError(image) {
 			image.onerror = "";
