@@ -1,13 +1,7 @@
 Profile = {
     CONSTANTS: {
-        route: Route.PROFILE,
+        route: '/profile',
         profile: '',
-        location_route: '/location/',
-        myorders_route: '/myorders',
-        address_route: '/address',
-        avatar: '/update/avatar',
-        card_linking: '/profile/show',
-        change_route: 'change/password',
     },
 
     init: function () {
@@ -18,7 +12,7 @@ Profile = {
     getProfile: function () {
         $.ajax({
             // url: App.api + '/' + Route.PROFILE,
-            url: Cedezone.CONSTANTS.BASE_URL + Profile.CONSTANTS.card_linking,
+            url: Cedezone.CONSTANTS.BASE_URL + Profile.CONSTANTS.route,
             data: {
                 token: Cedezone.getToken()
             },

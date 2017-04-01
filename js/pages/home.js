@@ -1,4 +1,4 @@
-Dashboard = {
+Home = {
 
     CONSTANTS: {
         route: '/provider/statistics',
@@ -8,10 +8,10 @@ Dashboard = {
         Cedezone.checkToken();
         Dashboard.getStatus();
     },
-    
+
       getStatus: function () {
         $.ajax({
-            url: Cedezone.CONSTANTS.BASE_URL + Dashboard.CONSTANTS.route,
+            url: Cedezone.CONSTANTS.BASE_URL + Home.CONSTANTS.route,
             data: {
                 token: Cedezone.getToken()
             },
@@ -21,7 +21,7 @@ Dashboard = {
             dataType: 'json',
             success: function (data) {
                 Cedezone.hideLoadingGif();
-                Dashboard.setDashboardData(data);
+                Home.setDashboardData(data);
             },
             type: 'GET',
             beforeSend: function () {

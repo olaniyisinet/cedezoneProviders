@@ -1,12 +1,5 @@
 sideProfile = {
     CONSTANTS: {
-        route: Route.PROFILE,
-        profile: '',
-        location_route: '/location/',
-        myorders_route: '/myorders',
-        address_route: '/address',
-        avatar: '/update/avatar',
-        card_linking: '/profile/show'
     },
 
     init: function () {
@@ -17,7 +10,7 @@ sideProfile = {
     getProfile: function () {
         $.ajax({
            // url: App.api + '/' + Route.PROFILE,
-            url: Cedezone.CONSTANTS.BASE_URL + sideProfile.CONSTANTS.card_linking,
+            url: Cedezone.CONSTANTS.BASE_URL + '/profile',
             data: {
                 token: Cedezone.getToken()
             },
@@ -48,11 +41,5 @@ sideProfile = {
             $('#photos').attr('data-default-file',data.data.avatar);
             // $('#photo').dropify();
         }
-    },
-
-    uploadPic: function () {
-        $(form).ajaxForm({
-            success: function (data) {},
-        })
     },
 }

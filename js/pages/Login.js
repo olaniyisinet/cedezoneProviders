@@ -136,7 +136,7 @@ Login = {
                     title: 'Success',
                     text: 'Login you in.....',
                 })
-                        window.location = 'pending.html';
+                        window.location = 'activation_pending.html';
             // window.location = App.url + 'pending.html';
         }else if(response.provider.enable==1){
                         showDialog({
@@ -149,7 +149,7 @@ Login = {
                     title: 'Success',
                     text: 'Login you in.....',
                 })
-                        window.location = 'pending.html';
+                        window.location = 'activation_pending.html';
             //   window.location = App.url + 'pending.html';
         }
       }
