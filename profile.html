@@ -54,19 +54,25 @@
 				</div>
 			</li>
 			<li>
-				<a href="home.html"><i class="fa fa-home"></i>Home</a>
+			<a href="home.html"><i class="fa fa-home"></i>Home</a>
 			</li>
 			<li>
-				<a href="profile.html"><i class="fa fa-user"></i>Profile</a>
+			<a href="profile.html"><i class="fa fa-user"></i>Profile</a>
 			</li>
 			<li>
-				<a href="linkcard.html"><i class="fa fa-credit-card"></i>Link Card</a>
+			<a href="nearby.html"><i class="fa fa-credit-card"></i>Nearby</a>
 			</li>
 			<li>
-				<a href="orderHistory.html"><i class="fa fa-history"></i>Order History</a>
+			<a href="pendings.html"><i class="fa fa-history"></i>Pending Orders</a>
 			</li>
 			<li>
-				<a href="bookaservice.html"><i class="fa fa-pencil-square-o"></i>Book a Service</a>
+			<a href="completed.html"><i class="fa fa-pencil-square-o"></i>Completed Orders</a>
+			</li>
+			<li>
+			<a href="transactions.html"><i class="fa fa-pencil-square-o"></i>Transactions</a>
+			</li>
+			<li>
+			<a href="settlements.html"><i class="fa fa-pencil-square-o"></i>Settlements</a>
 			</li>
 			<li>
 				<a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
@@ -147,15 +153,14 @@
 	<script src="js/mdl-jquery-modal-dialog.js"></script>
 
 	<script src="js/pages/Main.js"></script>
-	<script src="js/pages/sideprofile.js"></script>
 	<script src="js/pages/profile.js"></script>
 
 	<script type="application/javascript">
 		$(document).ready(function () {
 			// Form.init('login');
-			Profile.init();
 			Cedezone.init();
-			sideProfile.init();
+			// sideProfile.init();
+			Profile.init();
 });
 function imgError(image) {
     image.onerror = "";

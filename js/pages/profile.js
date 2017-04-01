@@ -53,9 +53,14 @@ Profile = {
             // $('#photo').dropify();
         }
 
-        Cedezone.storeName(Profile.CONSTANTS.profile.data.name);
-        //        Dashboard.init();
-    },
+        // Cedezone.storeName(Profile.CONSTANTS.profile.data.name);
+        $('#photos').find('#profileNameTop').text(data.data.name);
+
+        if(data.data.avatar!='') {
+            $('#photos').find('#avatar').attr('src', data.data.avatar); //
+            $('#photos').attr('data-default-file',data.data.avatar);
+            // $('#photo').dropify();
+        }    },
 
     ProcessError: function (data) {
         Cedezone.hideLoadingGif();

@@ -5,6 +5,7 @@ sideProfile = {
     init: function () {
         Cedezone.checkToken();
         sideProfile.getProfile();
+        // Home.init();
     },
 
     getProfile: function () {
@@ -31,7 +32,7 @@ sideProfile = {
     },
     
     populateProfile: function (data) {
-        console.log(data);
+        // console.log(data);
         // sideProfile.CONSTANTS.profile = data;
 
          $('#photos').find('#profileNameTop').text(data.data.name);
