@@ -5,7 +5,7 @@ sideProfile = {
     init: function () {
         Cedezone.checkToken();
         sideProfile.getProfile();
-        // Home.init();
+        // pending.init();
     },
 
     getProfile: function () {
