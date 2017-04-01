@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Cedezone</title>
@@ -18,13 +19,14 @@
 	<link rel="stylesheet" href="css/owl.transitions.css">
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive_table.css"> 
+	<link rel="stylesheet" href="css/responsive_table.css">
 	<link rel="stylesheet" href="css/ghpages-materialize.css">
-	<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/fontcss.css" rel="stylesheet" type="text/css">
+	<link href="css/icon.css" rel="stylesheet">
 </head>
+
 <body>
-<img src="img/loading.gif" class="hidden" id="loading-gif" />
+	<img src="img/loading.gif" class="hidden" id="loading-gif" />
 	<!-- navbar -->
 	<div class="navbar">
 		<div class="container">
@@ -32,7 +34,9 @@
 				<a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
 			</div>
 			<div class="site-title">
-				<a href="#" class="logo"><h1>Cedezone</h1></a>
+				<a href="#" class="logo">
+					<h1>Cedezone</h1>
+				</a>
 			</div>
 			<div class="panel-control-right">
 				<a href="index.html"><i class="fa fa-power-off"></i></a>
@@ -40,11 +44,11 @@
 		</div>
 	</div>
 	<!-- end navbar -->
-          <div class="mdl-spinner mdl-js-spinner is-active"></div>
+	<div class="mdl-spinner mdl-js-spinner is-active"></div>
 
 	<!-- panel control -->
 	<div class="panel-control-right">
-		<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
+		<ul id="slide-out-left" class="side-nav collapsible" data-collapsible="accordion">
 			<li>
 				<div class="photos" id="photos">
 					<img src="img/author.png" alt="" id="avatar" onerror="imgError(this);">
@@ -52,25 +56,25 @@
 				</div>
 			</li>
 			<li>
-			<a href="home.html"><i class="fa fa-home"></i>Home</a>
+				<a href="home.html"><i class="fa fa-home"></i>Home</a>
 			</li>
 			<li>
-			<a href="profile.html"><i class="fa fa-user"></i>Profile</a>
+				<a href="profile.html"><i class="fa fa-user"></i>Profile</a>
 			</li>
 			<li>
-			<a href="nearby.html"><i class="fa fa-credit-card"></i>Nearby</a>
+				<a href="nearby.html"><i class="fa fa-credit-card"></i>Nearby</a>
 			</li>
 			<li>
-			<a href="pendings.html"><i class="fa fa-history"></i>Pending Orders</a>
+				<a href="pendings.html"><i class="fa fa-history"></i>Pending Orders</a>
 			</li>
 			<li>
-			<a href="completed.html"><i class="fa fa-pencil-square-o"></i>Completed Orders</a>
+				<a href="completed.html"><i class="fa fa-pencil-square-o"></i>Completed Orders</a>
 			</li>
 			<li>
-			<a href="transactions.html"><i class="fa fa-pencil-square-o"></i>Transactions</a>
+				<a href="transactions.html"><i class="fa fa-pencil-square-o"></i>Transactions</a>
 			</li>
 			<li>
-			<a href="settlements.html"><i class="fa fa-pencil-square-o"></i>Settlements</a>
+				<a href="settlements.html"><i class="fa fa-pencil-square-o"></i>Settlements</a>
 			</li>
 			<li>
 				<a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
@@ -127,8 +131,8 @@
 	</div>
 	<!-- script -->
 	<script src="js/jquery.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.blockUI.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.blockUI.js"></script>
 	<script src="js/materialize.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
@@ -136,23 +140,22 @@
 	<script src="js/mprogress.min.js"></script>
 	<script src="js/responsive_table.js"></script>
 
-	 <script src="js/pages/Main.js"></script>
-     <script src="js/pages/home.js"></script>
-	 <script src="js/pages/sideprofile.js"></script>
-	
-    <script type="application/javascript">
-        $(document).ready(function() {
-			
-			// Home.init();
-            sideProfile.init();
-});
-	function imgError(image) {
-    image.onerror = "";
-    image.src = "img/author.png";
-    return true;
-}
-        
-    </script>
+	<script src="js/pages/Main.js"></script>
+	<!--<script src="js/pages/home.js"></script>-->
+	<script src="js/pages/sideprofile.js"></script>
+
+	<script type="application/javascript">
+		$(document).ready(function () {
+			Home.init();
+			sideProfile.init();
+		});
+
+		function imgError(image) {
+			image.onerror = "";
+			image.src = "img/author.png";
+			return true;
+		}
+	</script>
 
 </body>
 
