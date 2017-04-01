@@ -39,21 +39,14 @@ Profile = {
     populateProfile: function (data) {
 
         Profile.CONSTANTS.profile = data;
+        // alert(JSON.stringify(data.data.provider.service.service_name));
         $('#profileTab').find('#providerType').text(data.data.provider.type.name);
-        $('#profileTab').find('#profileService').text(data.data.provider.service.service_name);
-        $('#profileTab').find('#serviceCategory').text(data.data.provider.service.category_name);
+        $('#profileTab').find('#providerService').text(data.data.provider.service.service_name);
+        $('#profileTab').find('#providerCategory').text(data.data.provider.service.category_name);
         $('#profileTab').find('#profileName').text(data.data.name);
         $('#profileTab').find('#profilePhone').text(data.data.phone);
         $('#profileTab').find('#profileLocation').text(data.data.country + ', ' +data.data.state+ ', '+data.data.location);
         $('#profileTab').find('#profileAddress').text(data.data.address);
-
-        if (data.data.avatar != '') {
-            $('.img-uplod').find('#avatar').attr('src', data.data.avatar); //
-            // $('#photo').attr('data-default-file',data.data.avatar);
-            // $('#photo').dropify();
-        }
-
-        // Cedezone.storeName(Profile.CONSTANTS.profile.data.name);
         $('#photos').find('#profileNameTop').text(data.data.name);
 
         if(data.data.avatar!='') {
