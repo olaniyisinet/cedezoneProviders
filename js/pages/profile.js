@@ -39,10 +39,10 @@ Profile = {
     populateProfile: function (data) {
 
         Profile.CONSTANTS.profile = data;
-        // alert(JSON.stringify(data.data.provider.service.service_name));
+        //  alert(JSON.stringify(data.data.provider.service));
         $('#profileTab').find('#providerType').text(data.data.provider.type.name);
-        $('#profileTab').find('#providerService').text(data.data.provider.service.service_name);
-        $('#profileTab').find('#providerCategory').text(data.data.provider.service.category_name);
+        $('#profileTab').find('#providerService').text(JSON.stringify(data.data.provider.service));
+        $('#profileTab').find('#providerCategory').text(JSON.stringify(data.data.provider.service));
         $('#profileTab').find('#profileName').text(data.data.name);
         $('#profileTab').find('#profilePhone').text(data.data.phone);
         $('#profileTab').find('#profileLocation').text(data.data.country + ', ' +data.data.state+ ', '+data.data.location);
