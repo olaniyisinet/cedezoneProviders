@@ -3,6 +3,7 @@ sideProfile = {
     },
 
     init: function () {
+        Cedezone.init();
         Cedezone.checkToken();
         sideProfile.getProfile();
     },

@@ -18,10 +18,10 @@
 	<link rel="stylesheet" href="css/owl.transitions.css">
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive_table.css"> 
 	<link rel="stylesheet" href="css/ghpages-materialize.css">
 	<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <img src="img/loading.gif" class="hidden" id="loading-gif" />
@@ -32,7 +32,7 @@
 				<a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
 			</div>
 			<div class="site-title">
-				<a href="#" class="logo"><h1>Cedezone</h1></a>
+				<a href="#" class="logo"><h1>Transactions</h1></a>
 			</div>
 			<div class="panel-control-right">
 				<a href="index.html"><i class="fa fa-power-off"></i></a>
@@ -82,50 +82,46 @@
 	</div>
 	<!-- end panel control -->
 
-	<div class="features-app app-pages app-section">
-		<div class="container">
-			<div class="pages-title">
-				<h3>Statistics</h3>
-			</div>
-			<br>
-			<br>
-			<div class="row center">
-				<div class="col s6">
-					<div class="entry">
-						<i class="fa fa-thumbs-o-up" style="color: green"></i>
-						<h6>Total Fulfilled</h6>
-						<h5 id="counter1">0</h5>
-					</div>
-				</div>
-				<div class="col s6">
-					<div class="entry">
-						<i class="fa fa-hand-paper-o" style="color: yellow"></i>
-						<h6>Total Pending</h6>
-						<h5 id="counter2">0</h5>
-					</div>
-				</div>
-			</div>
-			<br>
-			<br>
-			<div class="row center">
-				<div class="col s6">
-					<div class="entry">
-						<i class="fa fa-thumbs-o-down" style="color: red"></i>
-						<h6>Total Rejected</h6>
-						<h5 id="counter3">0</h5>
-					</div>
-				</div>
-				<div class="col s6">
-					<div class="entry">
-						<i class="fa fa-money" style="color: blue"></i>
-						<h6>Total Settlement</h6>
-						<h5 id="counter4">0</h5>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="pricing-app app-pages app-section">
+        <div class="container">
+            <!--<div class="pages-title">
+                <h5> Order</h5>
+            </div>-->
+            <div class="table-responsive-vertical order-container">
+                <!-- Table starts here -->
+ <table id="transactions" class="table table-hover table-mc-light-blue" style="overflow-x: auto;overflow-y: auto; display: block;">
+            <thead>
+               <tr>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Narration</th>
+                                    <th>Service ID</th>
+                                    <th>Date</th>
+                                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+                <div id="pagination">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 	<!-- script -->
+	<script type="text/html" id="empty-activity">
+    <div class="row">
+		<div class="col s1"></div>
+        <div class="col s10">
+            <img class="center-block img-responsive" src="img/empty.png" />
+            <br/>
+            <h6 class="center">Sorry no unassigned orders available within your location</h6>
+			<div class="col s1"></div>
+        </div>
+    </div>
+</script>
 	<script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.blockUI.js"></script>
@@ -133,17 +129,20 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="js/mprogress.min.js"></script>
-	<script src="js/responsive_table.js"></script>
+	<script src="js/datatables/jquery.dataTables.min.js"></script>
+<script src="js/datatables/dataTables.bootstrap.min.js"></script>
+<script src="js/datatables/dataTables.responsive.min.js"></script>
+<script src="js/datatables/responsive.bootstrap.min.js"></script>
+<script src="js/datatables/responsive.bootstrap.min.js"></script>
 
 	 <script src="js/pages/Main.js"></script>
-     <script src="js/pages/home.js"></script>
+     <script src="js/pages/transactions.js"></script>
 	 <script src="js/pages/sideprofile.js"></script>
 	
     <script type="application/javascript">
         $(document).ready(function() {
-			Home.init();
-            sideProfile.init();
+			sideProfile.init();
+			Transactions.init();
 });
 	function imgError(image) {
     image.onerror = "";
