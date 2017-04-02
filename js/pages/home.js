@@ -32,10 +32,10 @@ Home = {
     },
 
     setDashboardData: function(data){
-        $('.row').find('#counter1').text(data.data.total_users);
-        $('.row').find('#counter2').text(data.data.total_providers);
-        $('.row').find('#counter3').text(data.data.pending_orders);
-        $('.row').find('#counter4').text(data.data.confirmed_orders);
+        $('#counter1').text(data.data.total_users);
+        $('#counter2').text(data.data.total_providers);
+        $('#counter3').text(data.data.pending_orders);
+        $('#counter4').text(data.data.confirmed_orders);
     },
 
 }
