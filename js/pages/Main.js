@@ -7,7 +7,6 @@ Cedezone = {
     },
 
     init: function () {
-        Cedezone.CONSTANTS.mprogress = new Mprogress();
         $('#logout').click(function (e) {
             // window.localStorage.removeItem('token');
             localStorage.clear();
@@ -18,7 +17,6 @@ Cedezone = {
             // alert('am here');
             window.location = Cedezone.CONSTANTS.BASE_URL + '/password/reset';
         });
-
     },
 
     callApi: function (url, type, callback, formdata) {

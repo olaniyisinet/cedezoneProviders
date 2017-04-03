@@ -41,8 +41,12 @@ Profile = {
         Profile.CONSTANTS.profile = data;
         //  alert(JSON.stringify(data.data.provider.service));
         $('#profileTab').find('#providerType').text(data.data.provider.type.name);
-        $('#profileTab').find('#providerService').text(JSON.stringify(data.data.provider.service));
-        $('#profileTab').find('#providerCategory').text(JSON.stringify(data.data.provider.service));
+        // $('#profileTab').find('#providerService').text(JSON.stringify(data.data.provider.service));
+        // $('#profileTab').find('#providerCategory').text(JSON.stringify(data.data.provider.service));
+
+        $('#profileTab').find('#providerService').text(Profile.processService(data.data.provider.service));
+        $('#profileTab').find('#providerCategory').text(Profile.processServiceCategory(data.data.provider.service));
+
         $('#profileTab').find('#profileName').text(data.data.name);
         $('#profileTab').find('#profilePhone').text(data.data.phone);
         $('#profileTab').find('#profileLocation').text(data.data.country + ', ' +data.data.state+ ', '+data.data.location);
@@ -73,5 +77,29 @@ Profile = {
                 text: 'Unable to Connect, ',
             })
         }
+    },
+    processService: function (data) {
+        if (data == null) {
+            return 'None';
+        }
+        $html = ''
+        $.each(data, function (i, value) {
+            $html = value.service_name 
+        });
+        return $html;
+        alert($html)
+    },
+    
+    processServiceCategory: function (data) {
+        if (data == null) {
+            return 'None';
+        }
+        $html = ''
+        $.each(data, function (i, value) {
+            $html += value.category_name + ","
+        });
+        $html += '';
+        return $html;
+         alert($html)
     },
 }
