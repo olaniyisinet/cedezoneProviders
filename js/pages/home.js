@@ -5,8 +5,8 @@ Home = {
       },
 
     init: function () {
-        Cedezone.init();
-        Cedezone.checkToken();
+        // Cedezone.init();
+        // Cedezone.checkToken();
         Home.getStatus();
     },
 
