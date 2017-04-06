@@ -5322,7 +5322,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
     background-color: #BDBDBD
 }
 select {
-    display: none
+    /*display: none*/
 }
 select.browser-default {
     display: block

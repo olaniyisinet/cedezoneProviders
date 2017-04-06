@@ -1,6 +1,5 @@
 sideProfile = {
-    CONSTANTS: {
-    },
+    CONSTANTS: {},
 
     init: function () {
         Cedezone.init();
@@ -10,7 +9,7 @@ sideProfile = {
 
     getProfile: function () {
         $.ajax({
-           // url: App.api + '/' + Route.PROFILE,
+            // url: App.api + '/' + Route.PROFILE,
             url: Cedezone.CONSTANTS.BASE_URL + '/profile',
             data: {
                 token: Cedezone.getToken()
@@ -22,7 +21,11 @@ sideProfile = {
             dataType: 'json',
             success: function (data) {
                 Cedezone.hideLoadingGif();
-                sideProfile.populateProfile(data)
+                if (data.msg == "Token has expired") {
+                    window.location = "index.html";
+                } else {
+                    sideProfile.populateProfile(data)
+                }
             },
             type: 'GET',
             beforeSend: function () {
@@ -30,16 +33,16 @@ sideProfile = {
             },
         });
     },
-    
+
     populateProfile: function (data) {
         // console.log(data);
         // sideProfile.CONSTANTS.profile = data;
 
-         $('#photos').find('#profileNameTop').text(data.data.name);
+        $('#photos').find('#profileNameTop').text(data.data.name);
 
-        if(data.data.avatar!='') {
+        if (data.data.avatar != '') {
             $('#photos').find('#avatar').attr('src', data.data.avatar); //
-            $('#photos').attr('data-default-file',data.data.avatar);
+            $('#photos').attr('data-default-file', data.data.avatar);
             // $('#photo').dropify();
         }
     },

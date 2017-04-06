@@ -6610,7 +6610,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever::after {
 }
 
 select {
-    display: none
+    /*display: none*/
 }
 
 select.browser-default {

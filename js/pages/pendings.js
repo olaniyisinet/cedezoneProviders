@@ -22,9 +22,7 @@ pending = {
             var orderid = $(this).attr('data-id');
             var statusid = this.value;
      pending.changeorderStatus(orderid, statusid);
-
         });
-
     },
 
     getOrders: function (p) {
@@ -76,9 +74,9 @@ pending = {
                     $('<td>').text(item.address),
                     $('<td>').text(item.service_date + ', ' + item.service_time),
                     $('<td>').html(pending.processAttribute(item.order_attributes)),
-                    // $('<td>').html(item.status.current_status.name),
+                     $('<td>').html(item.status.current_status.name),
                     // $('<td>').html("<a class='btn btn-danger reject' data-id='" + item.id +"'><i class='fa fa-plus'></i> Cancel </a>")
-                    // $('<td>').html(pending.nextAction(item.id, item.status.next_status))
+                    $('<td>').html(pending.nextAction(item.id, item.status.next_status))
 
                 );
                 $('#orders tbody').append($tr);
@@ -144,7 +142,7 @@ pending = {
                     pending.getOrders(1);
                 } else if (data.status == false) {
                     showDialog({
-                    title: 'Success',
+                    title: 'Error',
                     text: data.msg,
                     })
                 }
