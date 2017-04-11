@@ -2,9 +2,10 @@ sideProfile = {
     CONSTANTS: {},
 
     init: function () {
-        Cedezone.init();
+        // Cedezone.init();
         Cedezone.checkToken();
         sideProfile.getProfile();
+        // Home.init();
     },
 
     getProfile: function () {
