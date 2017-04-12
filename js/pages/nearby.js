@@ -123,11 +123,12 @@ nearby = {
                 order_id: orderid,
             },
             error: function (data) {
-                Cedezone.hideLoadingGif()
-                showDialog({
-                    title: 'Oops!',
-                    text: 'Unable to Accept. Try again later',
-                })
+                Cedezone.hideLoadingGif();
+                alert('Unable to Accept. Try again later');
+                // showDialog({
+                //     title: 'Oops!',
+                //     text: 'Unable to Accept. Try again later',
+                // })
             },
             headers: {
                 "Authorization": "Bearer " + Cedezone.getToken()
@@ -136,17 +137,19 @@ nearby = {
             success: function (data) {
                 Cedezone.hideLoadingGif();
                 if (data.status == true) {
-                    showDialog({
-                        title: 'Success!',
-                        text: data.msg,
-                    })
+                    alert(data.msg);
+                    // showDialog({
+                    //     title: 'Success!',
+                    //     text: data.msg,
+                    // })
                     //   Provider.getNewProviders()//reload the page
                     nearby.getOrders(1);
                 } else if (data.status == false) {
-                    showDialog({
-                        title: 'Oops!',
-                        text: data.msg,
-                    })
+                    // showDialog({
+                    //     title: 'Oops!',
+                    //     text: data.msg,
+                    // })
+                    alert(data.msg);
                 }
                 //hide modal
             },

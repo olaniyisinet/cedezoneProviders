@@ -1,7 +1,7 @@
 Home = {
 
     CONSTANTS: {
-        route: '/provider/statistics',
+        route: '/get/provider/statistics',
       },
 
     init: function () {

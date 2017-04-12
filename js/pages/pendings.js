@@ -36,7 +36,7 @@ pending = {
                 Cedezone.hideLoadingGif();
                 showDialog({
                     title: 'Oops!',
-                    text: 'Error fetching Unassigned Orders',
+                    text: 'Error fetching Pending Orders',
                 })
             },
             dataType: 'json',
@@ -123,10 +123,11 @@ pending = {
             },
             error: function (data) {
                 Cedezone.hideLoadingGif();
-                showDialog({
-                    title: 'Oops!',
-                    text: 'Unable to update Status, Try again later.',
-                })
+                // showDialog({
+                //     title: 'Oops!',
+                //     text: 'Unable to update Status, Try again later.',
+                // })
+                alert('Unable to change order status, Try again later');
             },
             headers: {
                 "Authorization": "Bearer " + Cedezone.getToken()
@@ -135,16 +136,18 @@ pending = {
             success: function (data) {
                 Cedezone.hideLoadingGif();
                 if (data.status == true) {
-                    showDialog({
-                    title: 'Success',
-                    text: data.msg,
-                })
+                //     showDialog({
+                //     title: 'Success',
+                //     text: data.msg,
+                // })
+                alert(data.msg);
                     pending.getOrders(1);
                 } else if (data.status == false) {
-                    showDialog({
-                    title: 'Error',
-                    text: data.msg,
-                    })
+                //     showDialog({
+                //     title: 'Error',
+                //     text: data.msg,
+                // })
+                alert(data.msg);
                 }
                 //hide modal
             },
