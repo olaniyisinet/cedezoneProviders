@@ -1,6 +1,6 @@
 Cedezone = {
     CONSTANTS: {
-        BASE_URL: 'http://localhost/cleaning-app/public/api/v1',
+        BASE_URL: 'http://api.staging.cedezone.com/api/v1',
         mprogress: '',
         profile_data: '',
         card_status:'',

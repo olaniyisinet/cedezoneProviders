@@ -22,7 +22,10 @@ Profile = {
             },
             dataType: 'json',
             success: function (data) {
-                Cedezone.hideLoadingGif();
+                                Cedezone.hideLoadingGif();
+                 if (data.msg == "Token has expired") {
+                    window.location = "index.html";
+                }
                 Profile.populateProfile(data)
             },
             type: 'GET',
