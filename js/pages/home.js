@@ -32,10 +32,11 @@ Home = {
     },
 
     setDashboardData: function(data){
-        $('#counter1').text(data.data.total_users);
-        $('#counter2').text(data.data.total_providers);
-        $('#counter3').text(data.data.pending_orders);
-        $('#counter4').text(data.data.confirmed_orders);
+        $('#counter1').text(data.data.fulfilled_orders);
+        $('#counter2').text(data.data.orders_in_progress);
+        $('#counter3').text(data.data.rejected_orders);
+        $('#counter4').text(data.data.payment_received);
+        $('#counter5').text(data.data.rating);
     },
 
 }
