@@ -23,6 +23,7 @@ Cedezone Provider app for fulfilling cleaning services  </description>
 <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.GeoBroker" />
 </feature>
+
   <platform name="android">
       <allow-intent href="market:*" />
         <icon src="res/icon.png"  density="ldpi" />
