@@ -5,6 +5,8 @@
         document.addEventListener("online", onOnline, false);
         document.addEventListener("resume", onResume, false);
         loadMapsApi();
+
+        // alert('google map is online');
     }
  
     function onOnline () {
@@ -19,7 +21,7 @@
         if(navigator.connection.type === Connection.NONE || google.maps) {
             return;
         }
-        $.getScript('https://maps.googleapis.com/maps/api/js?key=API_KEY&sensor=true&callback=onMapsApiLoaded');
+        $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCo5ZL-WiJduobYz12lxRsPdHS2oC-rIHw&sensor=true&callback=onMapsApiLoaded');
     }
  
     global.onMapsApiLoaded = function () {

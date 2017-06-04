@@ -2,7 +2,7 @@
   <name>Cedezone Providers</name>
   <description>
 Cedezone Provider app for fulfilling cleaning services  </description>
-  <author email="olaniyiolatunji@gmail.com" href="http://cordova.io">
+  <author email="olaniyiolatunji@gmail.com" href="http://aladstech.com.ng">
       Olaniyi Olatunji
   </author>
   <content src="index.html" />
@@ -14,6 +14,12 @@ Cedezone Provider app for fulfilling cleaning services  </description>
   <allow-intent href="sms:*" />
   <allow-intent href="mailto:*" />
   <allow-intent href="geo:*" />
+  <feature name="NetworkStatus">
+    <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+</feature>
+<feature name="NetworkStatus">
+    <param name="ios-package" value="CDVConnection" />
+</feature>
   <platform name="android">
       <allow-intent href="market:*" />
         <icon src="res/icon.png"  density="ldpi" />
