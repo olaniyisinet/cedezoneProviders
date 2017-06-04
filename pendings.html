@@ -172,12 +172,14 @@
 	</script>
 	<script type="text/javascript">
 		navigator.geolocation.getCurrentPosition(onSuccess, onError, {
-			timeout: 30000
+			// timeout: 30000
 		});
 
 		function onSuccess(position) {
-			var lat = position.coords.latitude;
-			var lang = position.coords.longitude;
+			// var lat = position.coords.latitude;
+			// var lang = position.coords.longitude;
+			var lat = '62553.3';
+			var lang = '33309.0';
 
 			//Google Maps
 			var myLatlng = new google.maps.LatLng(lat, lang);
