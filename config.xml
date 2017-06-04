@@ -52,5 +52,5 @@ Cedezone Provider app for fulfilling cleaning services  </description>
   </platform>
 
         <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />
-        <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" source="https://github.com/apache/cordova-plugin-geolocation.git" />
+        <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" source="git" spec="1.0.1"/>
 </widget>
