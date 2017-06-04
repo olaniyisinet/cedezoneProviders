@@ -135,7 +135,7 @@
 		</div>
 	</script>
 
-<div id="map"></div>
+<div id="map-canvas"></div>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.form.js"></script>
@@ -155,7 +155,7 @@
 	<script src="js/pages/pendings.js"></script>
 	<script src="js/pages/sideprofile.js"></script>
 
-	<script src="js/googleMap.js"></script>
+	<!--<script src="js/googleMap.js"></script>-->
 
 	<script type="application/javascript">
 		$(document).ready(function () {
@@ -170,7 +170,7 @@
 			return true;
 		}
 	</script>
-	<!--<script type="text/javascript">
+	<script type="text/javascript">
 		navigator.geolocation.getCurrentPosition(onSuccess, onError, {
 			timeout: 30000
 		});
@@ -197,7 +197,7 @@
 				'message: ' + error.message + '\n');
 		}
 		google.maps.event.addDomListener(window, 'load', onSuccess);
-	</script>-->
+	</script>
 </body>
 
 </html>
