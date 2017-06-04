@@ -24,6 +24,9 @@ Cedezone Provider app for fulfilling cleaning services  </description>
     <param name="android-package" value="org.apache.cordova.GeoBroker" />
 </feature>
 
+<feature name="http://api.phonegap.com/1.0/device" />
+	
+<feature name="http://api.phonegap.com/1.0/geolocation"/>
   <platform name="android">
       <allow-intent href="market:*" />
         <icon src="res/icon.png"  density="ldpi" />
@@ -49,5 +52,5 @@ Cedezone Provider app for fulfilling cleaning services  </description>
   </platform>
 
         <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />
-        <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
+        <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" source="npm" spec="1.0.1"/>
 </widget>
