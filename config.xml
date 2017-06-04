@@ -37,4 +37,6 @@ Cedezone Provider app for fulfilling cleaning services  </description>
       <allow-intent href="itms:*" />
       <allow-intent href="itms-apps:*" />
   </platform>
+
+        <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />
 </widget>

@@ -76,7 +76,8 @@ pending = {
                     $('<td>').html(pending.processAttribute(item.order_attributes)),
                      $('<td>').html(item.status.current_status.name),
                     // $('<td>').html("<a class='btn btn-danger reject' data-id='" + item.id +"'><i class='fa fa-plus'></i> Cancel </a>")
-                    $('<td>').html(pending.nextAction(item.id, item.status.next_status))
+                    $('<td>').html(pending.nextAction(item.id, item.status.next_status)),
+                    $('<td>').html("<a class='' data-id='" + item.address +"'>Locate Address on Map </a>")
 
                 );
                 $('#orders tbody').append($tr);
