@@ -4,6 +4,7 @@ pending = {
         route: '/provider/orders/pending',
         status: '/change/order/status',
         order_id: '',
+        map_location: ''
     },
 
     init: function () {
@@ -22,6 +23,16 @@ pending = {
             var orderid = $(this).attr('data-id');
             var statusid = this.value;
      pending.changeorderStatus(orderid, statusid);
+        });
+
+         $('#orders').on('click', '.map', function (e) { // raise modal for creating new state
+            e.preventDefault();
+            var location = $(this).attr('data-id');
+
+          pending.CONSTANTS.map_location = location;
+           // alert(orderid);
+            pending.locateMap(location);
+
         });
     },
 
@@ -71,13 +82,13 @@ pending = {
                     $('<td>').text(item.customer.name),
                     $('<td>').text(item.service.category + ' ' + item.service.name + '(' + item.service.attribute + ')'),
                     $('<td>').text(item.location),
-                    $('<td>').text(item.address),
+                    $('<td>').html(item.address + "<br><a class='map' data-id='" + item.location +', '+item.state+', '+item.country +"'>Locate Address on Map </a>"),
                     $('<td>').text(item.service_date + ', ' + item.service_time),
                     $('<td>').html(pending.processAttribute(item.order_attributes)),
                      $('<td>').html(item.status.current_status.name),
                     // $('<td>').html("<a class='btn btn-danger reject' data-id='" + item.id +"'><i class='fa fa-plus'></i> Cancel </a>")
-                    $('<td>').html(pending.nextAction(item.id, item.status.next_status)),
-                    $('<td>').html("<a class='' data-id='" + item.address +"'>Locate Address on Map </a>")
+                    $('<td>').html(pending.nextAction(item.id, item.status.next_status))
+                    // $('<td>').html("<a class='map' data-id='" + item.location +', '+item.state+', '+item.country +"'>Locate Address on Map </a>")
 
                 );
                 $('#orders tbody').append($tr);
@@ -158,4 +169,9 @@ pending = {
             type: 'POST'
         })
     },
+
+    locateMap: function (map_location) {
+        localStorage.setItem('map', map_location);
+        window.location= 'map.html';
+      },
 }

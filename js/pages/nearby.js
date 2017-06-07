@@ -4,6 +4,7 @@ nearby = {
         route: '/provider/orders/nearby',
         accept: '/accept/order',
         order_id: '',
+        map_location: ''
     },
 
     init: function () {
@@ -20,6 +21,14 @@ nearby = {
             nearby.CONSTANTS.order_id = orderid;
             // alert(orderid);
             nearby.acceptOrder(orderid);
+        });
+        $('#orders').on('click', '.map', function (e) { // raise modal for creating new state
+            e.preventDefault();
+            var location = $(this).attr('data-id');
+
+            nearby.CONSTANTS.map_location = location;
+            // alert(orderid);
+            nearby.locateMap(location);
         });
     },
 
@@ -72,7 +81,7 @@ nearby = {
                     // $('<td>').text(item.country),
                     //  $('<td>').text(item.state),
                     $('<td>').text(item.location),
-                    $('<td>').text(item.address),
+                    $('<td>').html(item.address + "<br><a class='map' data-id='" + item.location + ', ' + item.state + ', ' + item.country + "'>Locate Address on Map </a>"),
                     $('<td>').text(item.service_date + ', ' + item.service_time),
                     $('<td>').html(nearby.processAttribute(item.order_attributes)),
                     // $('<td>').html(item.status.name),
@@ -159,4 +168,8 @@ nearby = {
             type: 'POST'
         })
     },
+    locateMap: function (map_location) {
+        localStorage.setItem('map', map_location);
+        window.location= 'map.html';
+      },
 }
