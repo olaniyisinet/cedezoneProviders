@@ -172,6 +172,6 @@ pending = {
 
     locateMap: function (map_location) {
         localStorage.setItem('map', map_location);
-        window.location= 'map.html';
+        window.location= 'testmap.html';
       },
 }

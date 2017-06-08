@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Working Google Maps</title>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh3kP8G6nlxjU1MGqM7EpjbPwjQMW1248"> </script>
+
+<script>
+    var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+       // app.receivedEvent('deviceready');
+       navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
+    },
+
+    onSuccess: function(position){
+        var longitude = position.coords.longitude;
+        var latitude = position.coords.latitude;
+        var latLong = new google.maps.LatLng(latitude, longitude);
+
+        var mapOptions = {
+            center: latLong,
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	
+        var marker = new google.maps.Marker({
+              position: latLong,
+              map: map,
+              title: 'my location'
+          });
+    },
+    
+    onError: function(error){
+        alert("the code is " + error.code + ". \n" + "message: " + error.message);
+    },
+};
+
+app.initialize();
+
+</script>
+
+    </body>
+</html>
