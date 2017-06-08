@@ -13,6 +13,9 @@
 	<link href="css/icon.css" rel="stylesheet">
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyCh3kP8G6nlxjU1MGqM7EpjbPwjQMW1248"></script>
 <script type="text/javascript">
+ var url      = window.location.href; 
+        alert(url);
+    alert($.mobile.activePage.data('url'));  
   var geocoder;
   var map;
   var address = localStorage.getItem('map');
