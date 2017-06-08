@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Locate Customer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -39,7 +43,7 @@
                         });
                     } else
                         // $("#error").append("Unable to retrieve your route<br />");
-                                        calculateRoute($("#to").val(), $("#to").val());
+                        calculateRoute($("#to").val(), $("#to").val());
                 }
             );
         }
@@ -124,12 +128,17 @@
                 <input class="btn btn-success" type="submit" id="search" />
                 <!--<input class="btn btn-danger" type="reset" />-->
             </form>
+        </div>
+    </div>
+    
+    <div class="features-app app-pages app-section">
+        <div class="container">
             <div class="row center">
-                <div class="col s8">
+                <div class="col s12">
                     <div id="map"></div>
+                    <p id="error"></p>
                 </div>
             </div>
-            <p id="error"></p>
         </div>
     </div>
     <script>
