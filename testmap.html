@@ -38,7 +38,8 @@
                             directions: response
                         });
                     } else
-                        $("#error").append("Unable to retrieve your route<br />");
+                        // $("#error").append("Unable to retrieve your route<br />");
+                                        calculateRoute($("#to").val(), $("#to").val());
                 }
             );
         }
