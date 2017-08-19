@@ -67,7 +67,7 @@ completed = {
                     $('<td>').text(item.address),
                     $('<td>').text(item.service_date + ', ' + item.service_time),
                     $('<td>').html(completed.processAttribute(item.order_attributes)),
-                    $('<td>').html(item.status.name)
+                    // $('<td>').html(item.status.name)
 
                 );
                 $('#orders tbody').append($tr);
