@@ -1,7 +1,7 @@
 Settlements = {
 
     CONSTANTS: {
-        get_all_trans: '/provider/payments',
+        get_all_trans: '/provider/get/payments',
     },
 
     init: function () {
